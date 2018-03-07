@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+printf "#!/usr/bin/env ruby\n\nputs 'Hi!'" > $1
+chmod +x $1

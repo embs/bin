@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo mv /etc/resolv.cin.conf /etc/resolv.conf

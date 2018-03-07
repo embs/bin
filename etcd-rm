@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#docker exec etcd /bin/sh -c \
+#  "export ETCDCTL_API=3 && /usr/local/bin/etcdctl put $1 $2"
+
+ETCDCTL_API=3 etcdctl del $1 

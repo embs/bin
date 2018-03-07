@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#docker exec etcd /bin/sh -c \
+#  "export ETCDCTL_API=3 && /usr/local/bin/etcdctl get --consistency=s $1"
+
+ETCDCTL_API=3 etcdctl --endpoints=http://0.0.0.0:2379 get $1
