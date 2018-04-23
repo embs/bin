@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# source: https://gist.github.com/ronanguilloux/8319847
+
+set -e -v
+
+mkdir tmp
+for file in *.mp3; do
+    filename=${file%.*}
+    
+    #file_clean=`echo $filename | tr -cs "[:alnum:]_" _ `
+    #file_clean=`echo $filename | iconv -c -f utf8 -t ascii`
+    #file_clean=`echo $filename | iconv -f utf8 -t ascii//TRANSLIT | iconv -c -f utf8 -t ascii`
+    
+    file_clean=`echo $filename | iconv -f utf8 -t ascii//TRANSLIT`
+    final="$file_clean.mp3"
+    #echo "mv \"$file\" \"$final\" "
+    echo $file
+    echo $final
+    mv -f "$file" "tmp/$final"
+done
+
+mv tmp/* .
+rm -r tmp/

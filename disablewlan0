@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo cp /etc/network/disablewlan0 /etc/network/interfaces
+sudo service network-manager restart
