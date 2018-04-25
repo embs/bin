@@ -8,11 +8,11 @@ mkdir tmp
 for file in *.mp3; do
     filename=${file%.*}
     
-    #file_clean=`echo $filename | tr -cs "[:alnum:]_" _ `
     #file_clean=`echo $filename | iconv -c -f utf8 -t ascii`
     #file_clean=`echo $filename | iconv -f utf8 -t ascii//TRANSLIT | iconv -c -f utf8 -t ascii`
     
     file_clean=`echo $filename | iconv -f utf8 -t ascii//TRANSLIT`
+    file_clean=`echo $file_clean | tr -cs "[:alnum:]\n\r_" _ `
     final="$file_clean.mp3"
     #echo "mv \"$file\" \"$final\" "
     echo $file
