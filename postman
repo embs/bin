@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+xdg-open ~/Documents/books/postman-amusing.pdf
