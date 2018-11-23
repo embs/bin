@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+# Transform a file like
+#
+#       KEY=VAR
+#
+# Into
+#
+#       - name: KEY
+#         value: VAR
+#
+# Usage
+#
+#       $ env2yml <path to file>
+
+require 'yaml'
+
+FILEPATH=ARGV[0]
+
+File.readlines(FILEPATH).each do |line|
+  next if line.start_with?('#') || line == "\n"
+
+  name, value = line.split('=')
+
+  puts "- name: #{name}\n  value: #{value}"
+end
