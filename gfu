@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -ev
+
+git commit -a --fixup=$1
+git rebase -i --autosquash $1~

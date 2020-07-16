@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+docker network create vis_default
+docker network create livredoc_default
+docker network create fayeopenredu_default
