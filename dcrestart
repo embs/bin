@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dcup --scale $1=0 $ && dcupd $1
+docker-compose up --scale $1=0 $1 && docker-compose up -d $1
